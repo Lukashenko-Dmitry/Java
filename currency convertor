@@ -1,0 +1,18 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner us = new Scanner(System.in);
+        System.out.println("Hello I'm converter!");
+        System.out.println("What is dollar exchange rate today?");
+        double rate = us.nextDouble();
+        System.out.println("Enter number of $");
+        double usd = us.nextDouble();
+        double hryvna = rate * usd;
+        System.out.println("Result"+ hryvna);
+
+    }
+}
