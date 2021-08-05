@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        HashMap dict = new HashMap();
+        String contacts = "Anthony-0503252525;Ann-0679563212;David-0975452132";
+
+        String [] pairs = contacts.split(";");
+        for (String pair : pairs) {
+            String[] w = pair.split("-");
+            String name = w[0];
+            String tel = w[1];
+
+            dict.put(name, tel);
+
+        }
+        System.out.println(dict);
+        System.out.println("nEnter name, please:");
+        String contact_name = scanner.nextLine();
+        String [] cn = contact_name.split(" ");
+        String result = "";
+
+        for (String w: cn){
+           result = (String) dict.get(w);
+
+        }
+        System.out.println(result);
+    }
+}
