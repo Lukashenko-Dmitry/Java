@@ -1,0 +1,36 @@
+package com.company;
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+	HashMap dict = new HashMap();
+	String words = "i-я;love-любовь;life-жизнь";
+
+	String [] pairs = words.split(";");
+    for (String pair : pairs){
+        String [] w = pair.split("-");
+                String eng = w [0];
+                String ru = w[1];
+
+        dict.put(eng,ru);
+
+
+
+    }
+        System.out.println(dict);
+        System.out.println("nEnter a string to translate, please:");
+        String sentence = scanner.nextLine();
+
+        String [] enwords = sentence.split(" ");
+        String result = "";
+
+        for (String w: enwords){
+            result += dict.get(w);
+            result +=" ";
+        }
+            System.out.println(result);
+    }
+}
